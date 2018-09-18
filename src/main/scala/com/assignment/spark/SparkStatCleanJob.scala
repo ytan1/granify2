@@ -16,14 +16,14 @@ object SparkStatCleanJob {
       .master("local[2]")
       .getOrCreate()
 
-    val rDD = spark.sparkContext.textFile("file:///C:/Users/ytan1/Desktop/Granify/granify22/data/orders")
+    val rDD = spark.sparkContext.textFile("file:///C:/Users/ytan1/Desktop/Granify/granify2/data/orders")
 
 //    rDD.take(10).foreach(println)
 
     val dataFrame = spark.createDataFrame(rDD.map(line => AccessConvertUtils.parseOrders(line)), AccessConvertUtils.orderStruct)
     dataFrame.show(10, false)
     dataFrame.coalesce(1).write.format("parquet").mode(SaveMode.Overwrite)
-      .save("file:///C:/Users/ytan1/Desktop/Granify/granify22/cleanData/orders")
+      .save("file:///C:/Users/ytan1/Desktop/Granify/granify2/cleanData/orders")
 
     spark.stop()
   }
@@ -34,14 +34,14 @@ object SparkStatCleanJob {
       .master("local[2]")
       .getOrCreate()
 
-    val rDD = spark.sparkContext.textFile("file:///C:/Users/ytan1/Desktop/Granify/granify22/data/features")
+    val rDD = spark.sparkContext.textFile("file:///C:/Users/ytan1/Desktop/Granify/granify2/data/features")
 
 //        rDD.take(10).foreach(println)
 
     val dataFrame = spark.createDataFrame(rDD.map(line => AccessConvertUtils.parseFeatures(line)), AccessConvertUtils.featureStruct)
         dataFrame.show(10, false)
     dataFrame.coalesce(1).write.format("parquet").mode(SaveMode.Overwrite)
-      .save("file:///C:/Users/ytan1/Desktop/Granify/granify22/cleanData/features")
+      .save("file:///C:/Users/ytan1/Desktop/Granify/granify2/cleanData/features")
 
     spark.stop()
   }
@@ -52,14 +52,14 @@ object SparkStatCleanJob {
       .master("local[2]")
       .getOrCreate()
 
-    val rDD = spark.sparkContext.textFile("file:///C:/Users/ytan1/Desktop/Granify/granify22/data/sessions")
+    val rDD = spark.sparkContext.textFile("file:///C:/Users/ytan1/Desktop/Granify/granify2/data/sessions")
 
 //            rDD.take(10).foreach(println)
 
     val dataFrame = spark.createDataFrame(rDD.map(line => AccessConvertUtils.parseSessions(line)), AccessConvertUtils.sessionStruct)
     dataFrame.show(10, false)
     dataFrame.coalesce(1).write.format("parquet").mode(SaveMode.Overwrite)
-      .save("file:///C:/Users/ytan1/Desktop/Granify/granify22/cleanData/sessions")
+      .save("file:///C:/Users/ytan1/Desktop/Granify/granify2/cleanData/sessions")
 
     spark.stop()
   }

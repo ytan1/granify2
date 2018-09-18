@@ -11,16 +11,16 @@ object SparkStatAnalyzeJob {
       .config("spark.sql.sources.partitionColumnTypeInference.enabled","false")
       .master("local[2]").getOrCreate()
 
-    val ordersDF = spark.read.format("parquet").load("file:///C:/Users/ytan1/Desktop/Granify/granify22/cleanData/orders")
-    val featuresDF = spark.read.format("parquet").load("file:///C:/Users/ytan1/Desktop/Granify/granify22/cleanData/features")
-    val sessionsDF = spark.read.format("parquet").load("file:///C:/Users/ytan1/Desktop/Granify/granify22/cleanData/sessions")
+    val ordersDF = spark.read.format("parquet").load("file:///C:/Users/ytan1/Desktop/Granify/granify2/cleanData/orders")
+    val featuresDF = spark.read.format("parquet").load("file:///C:/Users/ytan1/Desktop/Granify/granify2/cleanData/features")
+    val sessionsDF = spark.read.format("parquet").load("file:///C:/Users/ytan1/Desktop/Granify/granify2/cleanData/sessions")
 
 //    ordersDF.show(10, false)
 //    featuresDF.show(10, false)
 //    sessionsDF.show(10, false)
 
     analyze1(spark, ordersDF, featuresDF, sessionsDF)
-//    analyze2(spark, featuresDF)
+    analyze2(spark, featuresDF)
     spark.stop()
   }
 
@@ -91,31 +91,31 @@ object SparkStatAnalyzeJob {
 //      spark.sql("select sum(conversions) from result").show(10)   //result 4263  total conversions with sessions recorded,  566 conversions are not recorded with sessions info
 
     //tsv format ouput
-//    resultDF.write.option("delimiter", "\t").mode(SaveMode.Overwrite).csv("file:///C:/Users/ytan1/Desktop/Granify/granify22/tsv/analyze1")
-//
-//    //insert results into local mysql
-//    StatDAO.deleteTable1()
-//    try{
-//      resultDF.foreachPartition(paritition => {
-//        val list = new ListBuffer[Analyze1Object]
-//
-//        paritition.foreach(row => {
-//          val start = row.getAs[String]("start")
-//          val ad = row.getAs[Int]("ad")
-//          val browser = row.getAs[String]("browser")
-//          val siteId = row.getAs[Int]("siteId")
-//          val gr = row.getAs[Int]("gr")
-//          val sessions = row.getAs[Long]("sessions")
-//          val conversions = row.getAs[Long]("conversions")
-//          val transactions = row.getAs[Long]("transactions")
-//          val revenues = row.getAs[Double]("revenues")
-//          list.append(Analyze1Object(start, siteId,gr,ad,browser,sessions,conversions,transactions, revenues))
-//        })
-//        StatDAO.insertAnalyze1Res(list)
-//      })
-//    }catch {
-//      case e: Exception => e.printStackTrace()
-//    }
+    resultDF.write.option("delimiter", "\t").mode(SaveMode.Overwrite).csv("file:///C:/Users/ytan1/Desktop/Granify/granify2/tsv/analyze1")
+
+    //insert results into local mysql
+    StatDAO.deleteTable1()
+    try{
+      resultDF.foreachPartition(paritition => {
+        val list = new ListBuffer[Analyze1Object]
+
+        paritition.foreach(row => {
+          val start = row.getAs[String]("start")
+          val ad = row.getAs[Int]("ad")
+          val browser = row.getAs[String]("browser")
+          val siteId = row.getAs[Int]("siteId")
+          val gr = row.getAs[Int]("gr")
+          val sessions = row.getAs[Long]("sessions")
+          val conversions = row.getAs[Long]("conversions")
+          val transactions = row.getAs[Long]("transactions")
+          val revenues = row.getAs[Double]("revenues")
+          list.append(Analyze1Object(start, siteId,gr,ad,browser,sessions,conversions,transactions, revenues))
+        })
+        StatDAO.insertAnalyze1Res(list)
+      })
+    }catch {
+      case e: Exception => e.printStackTrace()
+    }
   }
 
   def analyze2(spark: SparkSession, featuresDF: DataFrame): Unit ={
@@ -127,7 +127,7 @@ object SparkStatAnalyzeJob {
                       "avg(feature4) as mean4, stddev(feature4) as sd4 " +
                       "from features group by siteId, ad")
     resDF.show(5000, false)
-    resDF.write.option("delimiter", "\t").mode(SaveMode.Overwrite).csv("file:///C:/Users/ytan1/Desktop/Granify/granify22/tsv/analyze2")
+    resDF.write.option("delimiter", "\t").mode(SaveMode.Overwrite).csv("file:///C:/Users/ytan1/Desktop/Granify/granify2/tsv/analyze2")
 
     //insert results into local mysql
     StatDAO.deleteTable2()
