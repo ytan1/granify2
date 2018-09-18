@@ -1,0 +1,30 @@
+                                             Data Quality Report
+Sessions:
+
+952 rows are found without "browser" info (0.94% of total), which are marked as "Unknown" for further processes
+
+1572 rows are found to have duplicated ssid (1.56% of total), which are removed before further processes. Although "gr" and "st" are different in these rows, the first_value is kept to avoid taking acount of the same transaction in different groups of gr.
+
+Orders: 
+
+There are 4017 orders with ssid which are not recorded in the sessions table (12.3% of total orders). Those orders are not counted in analyze1.
+
+There are totally 4829 conversions, including 485 single transaction conversions.
+
+Features:
+
+There are 101 features with unique ssid which are not recorded in the sessions table. (0.1% of total features)
+
+All feature rows have "ad" info.
+
+1030 sessions do not have feature info. (1.0%) So "ad"s of those sessions are marked as -3. 
+
+After analyze:
+
+28778 transactions, 4263 conversions are reported after joining the 3 tables. Those values are slight smaller than the info got from order table, because some orders are not recorded in session table. 
+
+Notice: the two resulted dataFrame are stored into local mySQL server and "tsv" folder as well.
+
+Further analysis can include visualizations of the results based on the mysql queries. For example: 
+
+Analyze the number of conversions, total revenue, number of sessions, conversions/sessions vs. starting time, source, ad, siteId, browser... 20 relationships

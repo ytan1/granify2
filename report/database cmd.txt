@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS table1 (start VARCHAR(30), siteId INT, gr INT, ad VARCHAR(4), browser VARCHAR(10), sessions LONG, conversions LONG, transactions LONG, revenues DOUBLE(10,2), PRIMARY KEY(start, siteId, gr, ad, browser));
+CREATE TABLE IF NOT EXISTS table2 (siteId INT, ad INT, mean1 DOUBLE(18,14), sd1 DOUBLE(18,14), mean2 DOUBLE(4,1), sd2 DOUBLE(4,1), mean3 DOUBLE(18,14), sd3 DOUBLE(18,14), mean4 DOUBLE(18,14), sd4 DOUBLE(18, 14), PRIMARY KEY(siteId, ad));

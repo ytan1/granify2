@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0b5b5b1-e661-461c-8a49-1a408900cdc8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data Quality Report" beforeDir="false" afterPath="$PROJECT_DIR$/Data Quality Report" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/assignment/spark/SparkStatAnalyzeJob.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/assignment/spark/SparkStatAnalyzeJob.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -14,7 +15,35 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SparkStatCleanJob.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/assignment/spark/SparkStatCleanJob.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatDAO.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/assignment/spark/StatDAO.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SparkStatAnalyzeJob.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/assignment/spark/SparkStatAnalyzeJob.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="554">
+              <caret line="48" column="165" lean-forward="true" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="170" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -32,11 +61,11 @@
         <option value="$PROJECT_DIR$/src/main/scala/com/assignment/spark/TimeConvertUtil.scala" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/scala/com/assignment/spark/MySQLUtils.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/assignment/spark/SparkStatCleanJob.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/assignment/spark/AccessConvertUtils.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/assignment/spark/Analyze1Object.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/assignment/spark/Analyze2Object.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/assignment/spark/StatDAO.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/assignment/spark/SparkStatCleanJob.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/assignment/spark/SparkStatAnalyzeJob.scala" />
       </list>
     </option>
@@ -58,10 +87,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="516" />
-    <option name="y" value="238" />
-    <option name="width" value="1121" />
-    <option name="height" value="1100" />
+    <option name="width" value="960" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -90,6 +117,21 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="granify2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="granify2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="granify2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="granify2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="spark" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -99,7 +141,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../granify22" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -231,15 +273,16 @@
       <option name="presentableId" value="Default" />
       <updated>1537064977203</updated>
       <workItem from="1537064981465" duration="61468000" />
-      <workItem from="1537239306052" duration="100000" />
+      <workItem from="1537239306052" duration="1962000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61568000" />
+    <option name="totallyTimeSpent" value="63430000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="516" y="238" width="1121" height="1100" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -255,7 +298,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25429866" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0067708334" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Learn" order="2" />
@@ -302,11 +345,29 @@
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/assignment/spark/TimeConvertUtil.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/assignment/spark/MySQLUtils.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/assignment/spark/Analyze1Object.scala" />
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/assignment/spark/SparkStatCleanJob.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/assignment/spark/AccessConvertUtils.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/assignment/spark/Analyze2Object.scala" />
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/assignment/spark/StatDAO.scala" />
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/assignment/spark/SparkStatAnalyzeJob.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/assignment/spark/StatDAO.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/assignment/spark/SparkStatCleanJob.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/assignment/spark/SparkStatAnalyzeJob.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="48" column="165" lean-forward="true" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="170" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
@@ -364,6 +425,7 @@
             <option name="proportions">
               <list>
                 <option value="0.24597701" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

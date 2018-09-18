@@ -46,7 +46,7 @@ object SparkStatAnalyzeJob {
 
     spark.sql("select first_value(st) as st,first_value(start) as start,first_value(browser) as browser,first_value(gr) as gr,first_value(source) as source,first_value(siteId) as siteId, ssid from sessions group by ssid order by st").createOrReplaceTempView("distinct_sessions")
     spark.sql("select count(1) as sessions_num from distinct_sessions").show(false) //result = 99397 after remove duplicate session
-
+    spark.sql("select count(1) as unrecorded_order from orders where not exists (select 1 from distinct_sessions where distinct_sessions.ssid = orders.ssid)").show(false)
     //To count the conversion with single transaction
 //    val totalDF = spark.sql("select sum(revenue) as total, first_value(start) as start, ssid from orders group by ssid")
 //    totalDF.createOrReplaceTempView("totals")
